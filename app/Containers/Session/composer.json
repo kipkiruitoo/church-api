@@ -1,0 +1,6 @@
+{
+  "name": "apiato/session",
+  "description": "Session Container for apiato.",
+  "require": {
+  }
+}

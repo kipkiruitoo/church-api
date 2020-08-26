@@ -19,7 +19,7 @@ use Apiato\Core\Foundation\Facades\Apiato;
 class Controller extends ApiController
 {
     /**
-     * @param CreateChurchRequest $request
+     * @param CreateChurchRequest $request 
      * @return \Illuminate\Http\JsonResponse
      */
     public function createChurch(CreateChurchRequest $request)

@@ -4,7 +4,7 @@
  * @apiGroup           Session
  * @apiName            getAllSessions
  *
- * @api                {GET} /v1/sessions Endpoint title here..
+ * @api                {GET} /v1/sessions Get All Sessions..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

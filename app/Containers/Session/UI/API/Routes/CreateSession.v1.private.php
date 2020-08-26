@@ -4,7 +4,7 @@
  * @apiGroup           Session
  * @apiName            createSession
  *
- * @api                {POST} /v1/sessions Endpoint title here..
+ * @api                {POST} /v1/sessions Create a church session..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

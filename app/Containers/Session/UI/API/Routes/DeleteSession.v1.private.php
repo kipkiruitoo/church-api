@@ -4,7 +4,7 @@
  * @apiGroup           Session
  * @apiName            deleteSession
  *
- * @api                {DELETE} /v1/sessions/:id Endpoint title here..
+ * @api                {DELETE} /v1/sessions/:id Delete a Church Session..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

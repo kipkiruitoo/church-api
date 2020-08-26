@@ -6,7 +6,9 @@ use App\Ship\Parents\Models\Model;
 
 class Member extends Model
 {
-  protected $fillable = [];
+  protected $fillable = [
+    'member_id'
+  ];
 
   protected $attributes = [];
 
@@ -27,7 +29,8 @@ class Member extends Model
 
   public function sessions()
   {
-    return $this->belongsToMany('App\Containers\Session\Models\Session');
+    return $this->belongsToMany('App\Containers\Session\Models\Session')->withPivot('temperature', 'temperature')
+      ->withTimestamps();
   }
 
   /**

@@ -4,7 +4,7 @@
  * @apiGroup           Session
  * @apiName            updateSession
  *
- * @api                {PATCH} /v1/sessions/:id Endpoint title here..
+ * @api                {PATCH} /v1/sessions/:id Update a Session..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
@@ -21,9 +21,9 @@
 
 /** @var Route $router */
 $router->patch('sessions/{id}', [
-    'as' => 'api_session_update_session',
-    'uses'  => 'Controller@updateSession',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_session_update_session',
+  'uses'  => 'Controller@updateSession',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

@@ -4,7 +4,7 @@
  * @apiGroup           Session
  * @apiName            findSessionById
  *
- * @api                {GET} /v1/sessions/:id Endpoint title here..
+ * @api                {GET} /v1/sessions/:id Find Church Session by Id.
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
@@ -21,9 +21,9 @@
 
 /** @var Route $router */
 $router->get('sessions/{id}', [
-    'as' => 'api_session_find_session_by_id',
-    'uses'  => 'Controller@findSessionById',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_session_find_session_by_id',
+  'uses'  => 'Controller@findSessionById',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

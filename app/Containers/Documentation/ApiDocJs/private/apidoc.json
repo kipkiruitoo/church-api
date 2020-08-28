@@ -1,18 +1,16 @@
 {
-  "name": "apiato",
-  "description": "apiato (Private API) Documentation",
-  "title": "Welcome to apiato",
+  "name": "iVent",
+  "description": "(Private API) Documentation",
+  "title": "Welcome to Church and Evets Tracking API",
   "version": "1.0.0",
-  "url" : "http://api.apiato.test",
+  "url": "http://162.243.161.15:9685",
   "template": {
-  	"withCompare": true,
-  	"withGenerator": true
+    "withCompare": true,
+    "withGenerator": true
   },
   "header": {
     "title": "API Overview",
     "filename": "../public/api-rendered-markdowns/header.md"
   },
-  "order": [
-
-  ]
+  "order": []
 }

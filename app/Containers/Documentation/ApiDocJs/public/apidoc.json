@@ -2,8 +2,8 @@
   "name": "iVent",
   "description": "(Public API) Documentation",
   "title": "Welcome to Church and Evets Tracking API",
-  "version": "1.0.0",
-  "url": "http://162.243.161.15:9685",
+  "version": "v1.0.0",
+  "url": "https://churchkenya.tk",
   "template": {
     "withCompare": true,
     "withGenerator": true

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session
+ * @apiGroup           Session (Events)
  * @apiName            updateSession
  *
  * @api                {PATCH} /v1/sessions/:id Update a Session..

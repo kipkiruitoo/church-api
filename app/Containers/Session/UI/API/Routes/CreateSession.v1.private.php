@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session
+ * @apiGroup           Session (Events)
  * @apiName            createSession
  *
  * @api                {POST} /v1/sessions Create a  session..

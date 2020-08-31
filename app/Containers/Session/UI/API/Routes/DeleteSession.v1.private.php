@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session
+ * @apiGroup           Session (Events)
  * @apiName            deleteSession
  *
  * @api                {DELETE} /v1/sessions/:id Delete a  Session..

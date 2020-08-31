@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session
+ * @apiGroup           Session (Events)
  * @apiName            getAllSessions
  *
  * @api                {GET} /v1/sessions Get All Sessions..

@@ -13,7 +13,7 @@ class CreateChurchTransporter extends Transporter
     protected $schema = [
         'type' => 'object',
         'properties' => [
-            // enter all properties here
+            'id', 'name', 'location', 'seats'
 
             // allow for undefined properties
             // 'additionalProperties' => true,

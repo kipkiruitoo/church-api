@@ -52,7 +52,13 @@ class CreateSessionRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
+            // 'name' => 'required',
+            'name' => 'required',
+            'church_id' => 'required|numeric',
+            'venue_id' => 'required|numeric',
+            'date' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
             // '{user-input}' => 'required|max:255',
         ];
     }

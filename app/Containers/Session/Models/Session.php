@@ -6,7 +6,9 @@ use App\Ship\Parents\Models\Model;
 
 class Session extends Model
 {
-  protected $fillable = [];
+  protected $fillable = [
+    'name', 'church_id', 'venue_id', 'date', 'start_time', 'end_time'
+  ];
 
   protected $attributes = [];
 

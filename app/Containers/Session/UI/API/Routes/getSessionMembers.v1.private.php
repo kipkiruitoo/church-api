@@ -4,8 +4,8 @@
  * @apiGroup           Session
  * @apiName            getSessionMembers
  *
- * @api                {GET} /v1/session/members/:sessionid Get All members in a church session..
- * @apiDescription     Get All members in a church session..
+ * @api                {GET} /v1/session/members/:sessionid Get All members in a  session..
+ * @apiDescription     Get All members in a  session..
  *
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated User, pass bearer token in header

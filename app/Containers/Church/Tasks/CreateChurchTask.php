@@ -19,6 +19,7 @@ class CreateChurchTask extends Task
 
     public function run(array $data)
     {
+        // var_dump($data);
         try {
             return $this->repository->create($data);
         }

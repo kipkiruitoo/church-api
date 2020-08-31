@@ -7,7 +7,7 @@ use App\Ship\Parents\Models\Model;
 class Member extends Model
 {
   protected $fillable = [
-    'member_id'
+    'id', 'name', 'gender', 'phone', 'church_id', 'location', 'yob'
   ];
 
   protected $attributes = [];

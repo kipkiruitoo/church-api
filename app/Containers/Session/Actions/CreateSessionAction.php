@@ -10,9 +10,7 @@ class CreateSessionAction extends Action
 {
     public function run(Request $request)
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
+        $data = $request->all();
 
         $session = Apiato::call('Session@CreateSessionTask', [$data]);
 

@@ -31,7 +31,7 @@ class Controller extends ApiController
   {
     $session = Apiato::call('Session@CreateSessionAction', [$request]);
 
-    return $this->created($this->transform($session, SessionTransformer::class));
+    return $this->created($session);
   }
 
   /**
@@ -42,7 +42,9 @@ class Controller extends ApiController
   {
     $session = Apiato::call('Session@FindSessionByIdAction', [$request]);
 
-    return $this->transform($session, SessionTransformer::class);
+   return 
+        response()->json(["status"=>"Success", "message"=>"Session Retrieved Successfully", "data"=> $session])
+        ->setStatusCode(200);
   }
 
   /**
@@ -53,7 +55,9 @@ class Controller extends ApiController
   {
     $sessions = Apiato::call('Session@GetAllSessionsAction', [$request]);
 
-    return $this->transform($sessions, SessionTransformer::class);
+     return 
+        response()->json(["status"=>"Success", "message"=>"Sessions Retrieved Successfully", "data"=> $sessions])
+        ->setStatusCode(200);
   }
 
   /**
@@ -64,7 +68,9 @@ class Controller extends ApiController
   {
     $session = Apiato::call('Session@UpdateSessionAction', [$request]);
 
-    return $this->transform($session, SessionTransformer::class);
+    return 
+        response()->json(["status"=>"Success", "message"=>"Session Updated Successfully", "data"=> $session])
+        ->setStatusCode(200);
   }
 
   /**
@@ -75,7 +81,8 @@ class Controller extends ApiController
   {
     Apiato::call('Session@DeleteSessionAction', [$request]);
 
-    return $this->noContent();
+    return  response()->json(["status"=>"Success", "message"=>"Session Deleted Successfully"])
+        ->setStatusCode(200);
   }
 
   public function addMemberstoSession(Request $request)

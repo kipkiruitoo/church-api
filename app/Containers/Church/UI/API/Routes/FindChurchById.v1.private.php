@@ -1,21 +1,31 @@
 <?php
 
 /**
- * @apiGroup           Church
+ * @apiGroup           Organization
  * @apiName            findChurchById
  *
- * @api                {GET} /v1/churches/:id Find Church By Id.
+ * @api                {GET} /v1/churches/:id Find Organization By Id.
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         v1.0.0
- * @apiPermission      none
+ * @apiPermission      Authenticated User
  *
- * @apiParam           {String}  parameters here..
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
 {
-  // Insert the response of the request here...
+    "status": "Success",
+    "message": "Organization Retrieved Successfully",
+    "data": {
+        "id": 6,
+        "name": "maranatha",
+        "location": "longisa",
+        "seats": 78,
+        "created_at": "2020-08-31T07:04:53.000000Z",
+        "updated_at": "2020-08-31T07:04:53.000000Z",
+        "deleted_at": null
+    }
 }
  */
 

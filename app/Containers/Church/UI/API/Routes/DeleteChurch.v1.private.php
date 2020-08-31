@@ -1,21 +1,22 @@
 <?php
 
 /**
- * @apiGroup           Church
+ * @apiGroup           Organization
  * @apiName            deleteChurch
  *
- * @api                {DELETE} /v1/churches/:id Delete Church..
+ * @api                {DELETE} /v1/churches/:id Delete an Organization..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         v1.0.0
- * @apiPermission      none
+ * @apiPermission      Authenticated User
  *
- * @apiParam           {String}  parameters here..
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
 {
-  // Insert the response of the request here...
+    "status": "Success",
+    "message": "Organization Deleted Successfully"
 }
  */
 

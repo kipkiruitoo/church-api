@@ -52,7 +52,13 @@ class CreateMemberRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
+            // 'name' => 'required',
+            'name' => 'required',
+            'gender' => 'required|in:Male,Female',
+            'phone' => 'required|numeric',
+            'church_id' => 'required|numeric',
+            'location' => 'required',
+            'yob' => 'required|numeric',
             // '{user-input}' => 'required|max:255',
         ];
     }

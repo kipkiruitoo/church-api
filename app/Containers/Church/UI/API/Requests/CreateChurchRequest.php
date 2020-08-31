@@ -52,8 +52,9 @@ class CreateChurchRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
-            // '{user-input}' => 'required|max:255',
+            'name' => 'required',
+            'location' => 'required',
+            'seats' => 'required'
         ];
     }
 

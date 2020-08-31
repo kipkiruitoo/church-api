@@ -15,7 +15,11 @@ class ChurchRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        // ...
+        'name' => 'like',
+        'location' => 'like',
+        'seats' => '=',
+        'created_at' => 'like',
+        
     ];
 
 }

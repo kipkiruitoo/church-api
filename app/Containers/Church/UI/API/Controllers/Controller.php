@@ -10,6 +10,7 @@ use App\Containers\Church\UI\API\Requests\UpdateChurchRequest;
 use App\Containers\Church\UI\API\Transformers\ChurchTransformer;
 use App\Ship\Parents\Controllers\ApiController;
 use Apiato\Core\Foundation\Facades\Apiato;
+use App\Containers\Church\Models\Church;
 
 /**
  * Class Controller
@@ -24,9 +25,27 @@ class Controller extends ApiController
      */
     public function createChurch(CreateChurchRequest $request)
     {
-        $church = Apiato::call('Church@CreateChurchAction', [$request]);
+       
 
-        return $this->created($this->transform($church, ChurchTransformer::class));
+        // var_dump($request->all());
+        $church =  new Church;
+        $church->name = $request->name;
+        $church->location = $request->location;
+        $church->seats = $request->seats;
+
+        // dd($church);
+        if ($church->save()) {
+            return 
+        response()->json(["status"=>"Success", "message"=>"Organization Created Successfully", "data"=> $church->toArray()])
+        ->setStatusCode(201);
+        }else {
+            return ["message" => "An Error Occurred"]->response()->setStatusCode(422);
+        }
+
+        
+    
+      
+       
     }
 
     /**
@@ -37,7 +56,11 @@ class Controller extends ApiController
     {
         $church = Apiato::call('Church@FindChurchByIdAction', [$request]);
 
-        return $this->transform($church, ChurchTransformer::class);
+
+        return 
+        response()->json(["status"=>"Success", "message"=>"Organization Retrieved Successfully", "data"=> $church])
+        ->setStatusCode(200);
+        // return $this->transform($church, ChurchTransformer::class);
     }
 
     /**
@@ -48,7 +71,10 @@ class Controller extends ApiController
     {
         $churches = Apiato::call('Church@GetAllChurchesAction', [$request]);
 
-        return $this->transform($churches, ChurchTransformer::class);
+        // return $this->transform($churches, ChurchTransformer::class);
+        return 
+        response()->json(["status"=>"Success", "message"=>"Organizations Retrieved Successfully", "data"=> $churches])
+        ->setStatusCode(200);
     }
 
     /**
@@ -59,7 +85,9 @@ class Controller extends ApiController
     {
         $church = Apiato::call('Church@UpdateChurchAction', [$request]);
 
-        return $this->transform($church, ChurchTransformer::class);
+         return 
+        response()->json(["status"=>"Success", "message"=>"Organizations Updated Successfully", "data"=> $church])
+        ->setStatusCode(200);
     }
 
     /**
@@ -70,6 +98,7 @@ class Controller extends ApiController
     {
         Apiato::call('Church@DeleteChurchAction', [$request]);
 
-        return $this->noContent();
+      return  response()->json(["status"=>"Success", "message"=>"Organization Deleted Successfully"])
+        ->setStatusCode(200);
     }
 }

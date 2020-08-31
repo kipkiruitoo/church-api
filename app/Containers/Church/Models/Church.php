@@ -6,9 +6,15 @@ use App\Ship\Parents\Models\Model;
 
 class Church extends Model
 {
-  protected $fillable = [];
+   protected $table = 'churches';
 
-  protected $attributes = [];
+  protected $fillable = [
+    'name','location', 'seats'
+  ];
+
+  protected $attributes = [
+    
+  ];
 
   protected $hidden = [];
 

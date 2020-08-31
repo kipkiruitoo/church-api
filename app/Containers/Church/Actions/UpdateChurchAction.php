@@ -10,10 +10,11 @@ class UpdateChurchAction extends Action
 {
     public function run(Request $request)
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
+        // $data = $request->sanitizeInput([
+        //     // add your request data here
+        // ]);
 
+       $data = $request->all();
         $church = Apiato::call('Church@UpdateChurchTask', [$request->id, $data]);
 
         return $church;

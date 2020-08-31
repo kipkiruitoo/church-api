@@ -4,15 +4,15 @@
  * @apiGroup           Session
  * @apiName            Controller
  *
- * @api                {POST} /v1/session/add/members  Add Members to a church session...
- * @apiDescription     Add Members to a church session..
+ * @api                {POST} /v1/session/add/members  Add Members to a  session...
+ * @apiDescription     Add Members to a  session..
  *
  * @apiVersion         1.0.0
- * @apiPermission      none
+ * @apiPermission      Authenticated User, pass bearer token in header
  *
  * @apiParam           {Integer}  member_id here..
  * @apiParam           {Integer}  temperature in degrees celcius..
- *  @apiParam           {Integer}  session_id Id of the church session..
+ *  @apiParam           {Integer}  session_id Id of the  session..
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
 {

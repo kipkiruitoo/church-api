@@ -10,9 +10,7 @@ class UpdateMemberAction extends Action
 {
     public function run(Request $request)
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
+        $data = $request->all();
 
         $member = Apiato::call('Member@UpdateMemberTask', [$request->id, $data]);
 

@@ -8,14 +8,27 @@
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
- * @apiPermission      none
+ * @apiPermission       Authenticated User
  *
- * @apiParam           {String}  parameters here..
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
 {
-  // Insert the response of the request here...
+    "status": "Success",
+    "message": "Member Retrieved Successfully",
+    "data": {
+        "id": 2,
+        "name": "Davis Too",
+        "gender": "Male",
+        "phone": 715686316,
+        "church_id": 6,
+        "location": "longisa",
+        "yob": 1997,
+        "created_at": "2020-08-25T11:11:12.000000Z",
+        "updated_at": "2020-08-31T08:08:19.000000Z",
+        "deleted_at": null
+    }
 }
  */
 

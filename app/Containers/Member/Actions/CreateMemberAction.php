@@ -10,10 +10,8 @@ class CreateMemberAction extends Action
 {
     public function run(Request $request)
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
-
+        $data = $request->all();
+        // dd($data);
         $member = Apiato::call('Member@CreateMemberTask', [$data]);
 
         return $member;

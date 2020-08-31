@@ -26,7 +26,7 @@ class Controller extends ApiController
     {
         $member = Apiato::call('Member@CreateMemberAction', [$request]);
 
-        return $this->created($this->transform($member, MemberTransformer::class));
+        return $this->created($member);
     }
 
     /**
@@ -37,7 +37,9 @@ class Controller extends ApiController
     {
         $member = Apiato::call('Member@FindMemberByIdAction', [$request]);
 
-        return $this->transform($member, MemberTransformer::class);
+       return 
+        response()->json(["status"=>"Success", "message"=>"Member Retrieved Successfully", "data"=> $member])
+        ->setStatusCode(200);
     }
 
     /**
@@ -48,7 +50,9 @@ class Controller extends ApiController
     {
         $members = Apiato::call('Member@GetAllMembersAction', [$request]);
 
-        return $this->transform($members, MemberTransformer::class);
+       return 
+        response()->json(["status"=>"Success", "message"=>"Members Retrieved Successfully", "data"=> $members])
+        ->setStatusCode(200);
     }
 
     /**
@@ -59,7 +63,9 @@ class Controller extends ApiController
     {
         $member = Apiato::call('Member@UpdateMemberAction', [$request]);
 
-        return $this->transform($member, MemberTransformer::class);
+        return 
+        response()->json(["status"=>"Success", "message"=>"Member Updated Successfully", "data"=> $member])
+        ->setStatusCode(200);
     }
 
     /**
@@ -70,6 +76,8 @@ class Controller extends ApiController
     {
         Apiato::call('Member@DeleteMemberAction', [$request]);
 
-        return $this->noContent();
+       return  response()->json(["status"=>"Success", "message"=>"Member Deleted Successfully"])
+        ->setStatusCode(200);
     }
+    
 }

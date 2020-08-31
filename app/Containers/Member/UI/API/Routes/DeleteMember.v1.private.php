@@ -4,7 +4,7 @@
  * @apiGroup           Member
  * @apiName            deleteMember
  *
- * @api                {DELETE} /v1/members/:id Delete Church Member..
+ * @api                {DELETE} /v1/members/:id Delete Organization Member..
  * @apiDescription     Delete an instance of a member..
  *
  * @apiVersion         1.0.0

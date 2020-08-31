@@ -4,7 +4,7 @@
  * @apiGroup           Member
  * @apiName            findMemberById
  *
- * @api                {GET} /v1/members/:id Get Church member by Id..
+ * @api                {GET} /v1/members/:id Get Organization member by Id..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

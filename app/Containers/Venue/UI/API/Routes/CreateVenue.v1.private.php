@@ -4,8 +4,8 @@
  * @apiGroup           Venue
  * @apiName            createVenue
  *
- * @api                {POST} /v1/venues Endpoint title here..
- * @apiDescription     Endpoint description here..
+ * @api                {POST} /v1/venues Create a new venue..
+ * @apiDescription     create a new organization venue..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none

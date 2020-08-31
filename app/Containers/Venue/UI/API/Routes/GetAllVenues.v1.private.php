@@ -4,8 +4,8 @@
  * @apiGroup           Venue
  * @apiName            getAllVenues
  *
- * @api                {GET} /v1/venues Endpoint title here..
- * @apiDescription     Endpoint description here..
+ * @api                {GET} /v1/venues Get all venues..
+ * @apiDescription     Get a list of all venues..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none

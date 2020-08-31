@@ -4,8 +4,8 @@
  * @apiGroup           Venue
  * @apiName            deleteVenue
  *
- * @api                {DELETE} /v1/venues/:id Endpoint title here..
- * @apiDescription     Endpoint description here..
+ * @api                {DELETE} /v1/venues/:id Delete a venue..
+ * @apiDescription     Delete a venue instance..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none

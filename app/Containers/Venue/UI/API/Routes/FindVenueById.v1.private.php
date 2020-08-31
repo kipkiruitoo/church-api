@@ -4,8 +4,8 @@
  * @apiGroup           Venue
  * @apiName            findVenueById
  *
- * @api                {GET} /v1/venues/:id Endpoint title here..
- * @apiDescription     Endpoint description here..
+ * @api                {GET} /v1/venues/:id Find a Venue by ID..
+ * @apiDescription     find venue by id..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none

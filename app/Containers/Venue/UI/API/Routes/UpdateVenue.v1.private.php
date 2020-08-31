@@ -4,8 +4,8 @@
  * @apiGroup           Venue
  * @apiName            updateVenue
  *
- * @api                {PATCH} /v1/venues/:id Endpoint title here..
- * @apiDescription     Endpoint description here..
+ * @api                {PATCH} /v1/venues/:id Update venue..
+ * @apiDescription     update an instance of a venue..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none

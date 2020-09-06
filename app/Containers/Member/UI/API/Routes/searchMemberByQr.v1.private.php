@@ -49,8 +49,8 @@
 
 /** @var Route $router */
 $router->get('members/jhbkbkkbkdbkfbkbfkkbfkbdkbfkfbjksearch=qr_string:{qrcode}', [
-  'as' => 'api_member_',
-  'uses'  => 'Controller@',
+  'as' => 'api_member_searchmember',
+  'uses'  => 'Controller@searchmember',
   'middleware' => [
     'auth:api',
   ],

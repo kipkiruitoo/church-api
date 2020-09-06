@@ -4,7 +4,7 @@
  * @apiGroup           Member
  * @apiName            searchMemberByQrcode
  *
- * @api                {GET} /v1/members?search=qr_string:qrcode  SearchMember here..
+ * @api                {GET} /v1/members?search=qr_string:qrcode  Search Member by Qr Code
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

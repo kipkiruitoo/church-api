@@ -12,6 +12,8 @@ use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Support\Facades\DB;
 use App\Containers\Session\Models\Session;
 use Apiato\Core\Foundation\Facades\Apiato;
+
+use App\Containers\Venue\Models\Venue;
 // use App\Ship\Parents\Requests\Request;
 
 use Illuminate\Http\Request;
@@ -42,9 +44,9 @@ class Controller extends ApiController
   {
     $session = Apiato::call('Session@FindSessionByIdAction', [$request]);
 
-   return 
-        response()->json(["status"=>"Success", "message"=>"Session Retrieved Successfully", "data"=> $session])
-        ->setStatusCode(200);
+    return
+      response()->json(["status" => "Success", "message" => "Session Retrieved Successfully", "data" => $session])
+      ->setStatusCode(200);
   }
 
   /**
@@ -55,9 +57,9 @@ class Controller extends ApiController
   {
     $sessions = Apiato::call('Session@GetAllSessionsAction', [$request]);
 
-     return 
-        response()->json(["status"=>"Success", "message"=>"Sessions Retrieved Successfully", "data"=> $sessions])
-        ->setStatusCode(200);
+    return
+      response()->json(["status" => "Success", "message" => "Sessions Retrieved Successfully", "data" => $sessions])
+      ->setStatusCode(200);
   }
 
   /**
@@ -68,9 +70,9 @@ class Controller extends ApiController
   {
     $session = Apiato::call('Session@UpdateSessionAction', [$request]);
 
-    return 
-        response()->json(["status"=>"Success", "message"=>"Session Updated Successfully", "data"=> $session])
-        ->setStatusCode(200);
+    return
+      response()->json(["status" => "Success", "message" => "Session Updated Successfully", "data" => $session])
+      ->setStatusCode(200);
   }
 
   /**
@@ -81,8 +83,8 @@ class Controller extends ApiController
   {
     Apiato::call('Session@DeleteSessionAction', [$request]);
 
-    return  response()->json(["status"=>"Success", "message"=>"Session Deleted Successfully"])
-        ->setStatusCode(200);
+    return  response()->json(["status" => "Success", "message" => "Session Deleted Successfully"])
+      ->setStatusCode(200);
   }
 
   public function addMemberstoSession(Request $request)
@@ -93,6 +95,15 @@ class Controller extends ApiController
     $session_id = $request->session_id;
 
     $session = Session::find($session_id);
+
+    // get the associated venue
+    $venue = $session->venue;
+    // get capacity of that venue
+    $capacity = $venue->capacity;
+
+
+    
+
 
     if (is_null($session)) {
       return $this->json([

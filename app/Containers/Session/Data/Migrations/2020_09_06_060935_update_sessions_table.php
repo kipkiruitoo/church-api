@@ -12,8 +12,7 @@ class UpdateSessionsTable extends Migration
   public function up()
   {
     Schema::table('sessions', function (Blueprint $table) {
-
-      $table->integer('event_id');
+      $table->bigInteger('venue_id')->nullable();
     });
   }
 
@@ -22,6 +21,6 @@ class UpdateSessionsTable extends Migration
    */
   public function down()
   {
-    $table->dropColumn('event_id');
+    Schema::dropColumn('venue_id');
   }
 }

@@ -30,6 +30,12 @@ class Session extends Model
   {
     return $this->belongsTo('App\Containers\Event\Models\Event');
   }
+
+  public function venue()
+  {
+    return $this->hasOne('App\Containers\Venue\Models\Venue');
+  }
+
   public function members()
   {
     return $this->belongsToMany('App\Containers\Member\Models\Member', 'member_session', 'session_id', 'member_id')

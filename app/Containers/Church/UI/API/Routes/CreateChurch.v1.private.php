@@ -10,9 +10,8 @@
  * @apiVersion         v1.0.0
  * @apiPermission      Authenticated Users
  *
- * @apiParam           {String}  name (required) 
- * @apiParam           {String}  location (required) 
- * @apiParam           {String}  seats (required) 
+ * @apiParam           {String}  name (required)
+ * @apiParam           {String}  location (required)
 
  *
  * @apiSuccessExample  {json}  Success-Response:

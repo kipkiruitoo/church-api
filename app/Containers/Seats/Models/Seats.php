@@ -6,29 +6,27 @@ use App\Ship\Parents\Models\Model;
 
 class Seats extends Model
 {
-    protected $fillable = [
-      'name', 'church_id', 'venue_id'
-    ];
+  protected $fillable = [
+    'name', 'church_id', 'venue_id'
+  ];
 
-    protected $attributes = [
+  protected $attributes = [];
 
-    ];
+  protected $hidden = [];
 
-    protected $hidden = [
+  protected $casts = [];
 
-    ];
+  protected $dates = [
+    'created_at',
+    'updated_at',
+  ];
 
-    protected $casts = [
-
-    ];
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
-    ];
-
-    /**
-     * A resource key to be used by the the JSON API Serializer responses.
-     */
-    protected $resourceKey = 'seats';
+  public function venue()
+  {
+    return $this->belongsTo('App\Containers\Venue\Models\Venue');
+  }
+  /**
+   * A resource key to be used by the the JSON API Serializer responses.
+   */
+  protected $resourceKey = 'seats';
 }

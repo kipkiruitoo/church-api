@@ -8,9 +8,8 @@
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
- * @apiPermission      none
+ * @apiPermission      Autheticated User
  *
- * @apiParam           {String}  parameters here..
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
@@ -47,12 +46,3 @@
     }
 }
  */
-
-/** @var Route $router */
-$router->get('members?search=qr_string:{qrcode}', [
-  'as' => 'api_member_',
-  'uses'  => 'Controller@',
-  'middleware' => [
-    'auth:api',
-  ],
-]);

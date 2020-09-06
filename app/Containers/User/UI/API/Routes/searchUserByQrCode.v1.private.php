@@ -2,10 +2,10 @@
 
 /**
  * @apiGroup           User
- * @apiName
+ * @apiName            SearchUseryQrCode
  *
- * @api                {GET} /v1/users Endpoint title here..
- * @apiDescription     Endpoint description here..
+ * @api                {GET} /v1/users?search=qr_string:{qr_string} Search User by qr code ...
+ * @apiDescription     search for a user using qr string..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none
@@ -18,12 +18,3 @@
   // Insert the response of the request here...
 }
  */
-
-/** @var Route $router */
-$router->get('users', [
-  'as' => 'api_user_',
-  'uses'  => 'Controller@',
-  'middleware' => [
-    'auth:api',
-  ],
-]);

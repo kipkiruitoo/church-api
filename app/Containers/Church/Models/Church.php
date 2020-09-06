@@ -6,15 +6,13 @@ use App\Ship\Parents\Models\Model;
 
 class Church extends Model
 {
-   protected $table = 'churches';
+  protected $table = 'churches';
 
   protected $fillable = [
-    'name','location', 'seats'
+    'name', 'location', 'seats'
   ];
 
-  protected $attributes = [
-    
-  ];
+  protected $attributes = []; 
 
   protected $hidden = [];
 
@@ -33,6 +31,10 @@ class Church extends Model
   public function users()
   {
     return $this->hasMany('App\Containers\User\Models\User');
+  }
+  public function venues()
+  {
+    return $this->hasMany('App\Containers\Venue\Models\Venue');
   }
 
   /**

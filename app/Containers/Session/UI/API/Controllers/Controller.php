@@ -290,8 +290,8 @@ class Controller extends ApiController
 
     // print_r($seat);
 
-    $session->members()->attach($session_id, [
-      'member_id' =>  $member_id,
+    $session->users()->attach($session_id, [
+      'user_id' =>  $member_id,
       'temperature' => $temperature,
       'seat_id' => $seat
     ]);
@@ -322,6 +322,27 @@ class Controller extends ApiController
     return $this->json([
       'status' => 'success',
       'message' => 'Members in the church session Successfully Retrieved',
+      'data' => $members
+    ]);
+  }
+
+  public function getSessionUsers($session)
+  {
+    $session = Session::find($session);
+    if (is_null($session)) {
+      return $this->json([
+        'status' => 'failed',
+        'message' => 'Session not found'
+      ]);
+    }
+
+    $members = $session->users->toArray();
+    // var_dump($sessions);
+
+
+    return $this->json([
+      'status' => 'success',
+      'message' => 'Users in the  session Successfully Retrieved',
       'data' => $members
     ]);
   }

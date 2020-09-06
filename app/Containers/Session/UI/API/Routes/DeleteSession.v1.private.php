@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session (Events)
+ * @apiGroup           Session 
  * @apiName            deleteSession
  *
  * @api                {DELETE} /v1/sessions/:id Delete a  Session..
@@ -10,12 +10,12 @@
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated User
  *
- 
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 204 OK
 {
-  
+
 }
  */
 

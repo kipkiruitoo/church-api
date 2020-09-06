@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session (Events)
+ * @apiGroup           Session 
  * @apiName            findSessionById
  *
  * @api                {GET} /v1/sessions/:id Find  Session by Id.

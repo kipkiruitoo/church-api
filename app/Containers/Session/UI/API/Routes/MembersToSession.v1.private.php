@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session (Events)
+ * @apiGroup           Session 
  * @apiName            Controller
  *
  * @api                {POST} /v1/session/add/members  Add Members to a  session...

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session (Events)
+ * @apiGroup           Session 
  * @apiName            getAllSessions
  *
  * @api                {GET} /v1/sessions Get All Sessions..
@@ -10,7 +10,7 @@
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated User
  *
- 
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @apiGroup           Session (Events)
+ * @apiGroup           Session 
  * @apiName            getSessionMembers
  *
  * @api                {GET} /v1/session/members/:sessionid Get All members in a  session..

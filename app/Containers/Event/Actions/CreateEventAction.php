@@ -10,9 +10,7 @@ class CreateEventAction extends Action
 {
     public function run(Request $request)
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
+        $data = $request->all();
 
         $event = Apiato::call('Event@CreateEventTask', [$data]);
 

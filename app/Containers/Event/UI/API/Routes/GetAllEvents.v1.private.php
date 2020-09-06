@@ -4,13 +4,12 @@
  * @apiGroup           Event
  * @apiName            getAllEvents
  *
- * @api                {GET} /v1/events Endpoint title here..
+ * @api                {GET} /v1/events Get all Events..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
- * @apiPermission      none
+ * @apiPermission      Authenticated User
  *
- * @apiParam           {String}  parameters here..
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
@@ -21,9 +20,9 @@
 
 /** @var Route $router */
 $router->get('events', [
-    'as' => 'api_event_get_all_events',
-    'uses'  => 'Controller@getAllEvents',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_event_get_all_events',
+  'uses'  => 'Controller@getAllEvents',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

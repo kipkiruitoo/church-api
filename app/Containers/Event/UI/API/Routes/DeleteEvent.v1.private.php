@@ -4,13 +4,13 @@
  * @apiGroup           Event
  * @apiName            deleteEvent
  *
- * @api                {DELETE} /v1/events/:id Endpoint title here..
+ * @api                {DELETE} /v1/events/:id Delete Event
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
- * @apiPermission      none
+ * @apiPermission      Authenticated User
  *
- * @apiParam           {String}  parameters here..
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK

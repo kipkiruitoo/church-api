@@ -4,13 +4,13 @@
  * @apiGroup           Event
  * @apiName            findEventById
  *
- * @api                {GET} /v1/events/:id Endpoint title here..
+ * @api                {GET} /v1/events/:id Find Event By ID..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
- * @apiPermission      none
+ * @apiPermission      Authenticated User
  *
- * @apiParam           {String}  parameters here..
+
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK

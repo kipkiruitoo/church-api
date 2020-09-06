@@ -4,8 +4,8 @@
  * @apiGroup           Session
  * @apiName            Controller
  *
- * @api                {POST} /v1/session/add/members  Add Members to a  session seat ID will be assigned automatically...
- * @apiDescription     Add Members to a  session..
+ * @api                {POST} /v1/session/add/members  Add Members to a  session ...
+ * @apiDescription     seat ID will be assigned automatically..
  *
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated User, pass bearer token in header

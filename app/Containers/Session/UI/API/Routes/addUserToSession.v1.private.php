@@ -5,7 +5,7 @@
  * @apiName            addUserstoSession
  *
  * @api                {POST} /v1/session/add/users Add Users to Session
- * @apiDescription     Endpoint description here..
+ * @apiDescription     seat ID will be assigned automatically..
  *
  * @apiVersion         1.0.0
  * @apiPermission      none

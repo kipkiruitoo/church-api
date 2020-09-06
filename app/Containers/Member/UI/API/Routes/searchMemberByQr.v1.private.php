@@ -5,7 +5,7 @@
  * @apiName
  *
  * @api                {GET} /v1/members?search=qr_string:qrcode here..  Get Member by QR Code
- * @apiDescription     Endpoint description here..
+ * @apiDescription     Search for a member using a qr code
  *
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated User
@@ -47,3 +47,12 @@
     }
 }
  */
+
+/** @var Route $router */
+$router->get('members/jhbkbkkbkdbkfbkbfkkbfkbdkbfkfbjksearch=qr_string:{qrcode}', [
+  'as' => 'api_member_',
+  'uses'  => 'Controller@',
+  'middleware' => [
+    'auth:api',
+  ],
+]);

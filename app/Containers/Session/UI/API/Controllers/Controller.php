@@ -14,6 +14,8 @@ use App\Containers\Session\Models\Session;
 use Apiato\Core\Foundation\Facades\Apiato;
 
 use App\Containers\Venue\Models\Venue;
+
+use Illuminate\Support\Arr;
 // use App\Ship\Parents\Requests\Request;
 
 use Illuminate\Http\Request;
@@ -102,15 +104,19 @@ class Controller extends ApiController
     $capacity = $venue->capacity;
 
 
-    
+
+    $current_capacity = DB::table('member_session')
+      ->where('session_id', $session_id)
+      ->count();
 
 
     if (is_null($session)) {
       return $this->json([
         'status' => 'failed',
         'message' => 'church session not found'
-      ]);
+      ])->setStatusCode(404);
     }
+
 
     $exists = DB::table('member_session')
       ->where('member_id', $member_id)
@@ -124,14 +130,56 @@ class Controller extends ApiController
       ]);
     }
 
+    // check if capacity is full
+
+    if ($current_capacity >= $capacity) {
+      return $this->json([
+        'status' => 'failed',
+        'message' => 'Venue is  already full'
+      ]);
+    }
+
+    // get a seat number for new member
+
+    $seats = $venue->seats->pluck('id');
+    $seats = join(",", $seats->toArray());
+
+    $seats = explode(",", $seats);
+
+
+    // var_dump($seats);
+
+    $taken_seats =
+      DB::table('member_session')->where('session_id', $session_id)->get()->pluck('seat_id');
+
+
+
+    $taken_seats = join(",", $taken_seats->toArray());
+
+
+    $taken_seats = explode(",", $taken_seats);
+
+    // var_dump($taken_seats);
+
+    $remaining_seats = array_diff($seats, $taken_seats);
+
+
+    $seat = Arr::random($remaining_seats);
+
+    // print_r($seat);
+
     $session->members()->attach($session_id, [
       'member_id' =>  $member_id,
-      'temperature' => $temperature
+      'temperature' => $temperature,
+      'seat_id' => $seat
     ]);
 
     return $this->json([
       'status' => 'success',
-      'message' => 'Member Successfully Added to the church session'
+      'message' => 'Member Successfully Added to the church session',
+      'data' => [
+        "seat_id" => $seat
+      ]
     ]);
   }
 

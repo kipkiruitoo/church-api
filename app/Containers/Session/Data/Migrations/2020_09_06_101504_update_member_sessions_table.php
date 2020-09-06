@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class UpdateSessionsTable extends Migration
+class UpdateMemberSessionsTable extends Migration
 {
 
   /**
@@ -11,8 +11,9 @@ class UpdateSessionsTable extends Migration
    */
   public function up()
   {
-    Schema::table('sessions', function (Blueprint $table) {
-      $table->bigInteger('venue_id')->nullable();
+    Schema::table('member_session', function (Blueprint $table) {
+
+      $table->integer('seat_id');
     });
   }
 
@@ -21,6 +22,6 @@ class UpdateSessionsTable extends Migration
    */
   public function down()
   {
-    Schema::dropColumn('venue_id');
+    Schema::dropColumn('seat_id');
   }
 }

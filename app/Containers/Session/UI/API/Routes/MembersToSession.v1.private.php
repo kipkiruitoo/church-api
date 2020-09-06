@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @apiGroup           Session 
+ * @apiGroup           Session
  * @apiName            Controller
  *
- * @api                {POST} /v1/session/add/members  Add Members to a  session...
+ * @api                {POST} /v1/session/add/members  Add Members to a  session seat ID will be assigned automatically...
  * @apiDescription     Add Members to a  session..
  *
  * @apiVersion         1.0.0
@@ -17,7 +17,10 @@
  * HTTP/1.1 200 OK
 {
     "status": "success",
-    "message": "Member Successfully Added to the church session"
+    "message": "Member Successfully Added to the church session",
+    "data": {
+        "seat_id": "2"
+    }
 }
  */
 

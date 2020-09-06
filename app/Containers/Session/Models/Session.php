@@ -33,7 +33,7 @@ class Session extends Model
 
   public function venue()
   {
-    return $this->hasOne('App\Containers\Venue\Models\Venue');
+    return $this->belongsTo('App\Containers\Venue\Models\Venue');
   }
 
   public function members()

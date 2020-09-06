@@ -13,6 +13,7 @@
  * @apiParam           {String}  name (required) name of the session..
  * @apiParam           {Integer}  church_id (required) Organization Id..
  * @apiParam           {Integer}  venue_id (required) venue id of the session..
+ * @apiParam           {Integer}  event_id (required)  id of the event the session belongs to..
  * @apiParam           {Date}  date (required) Date of the session in the format yyyy-mm-dd..
  * @apiParam           {Time}  start_time (required) Start time of the session in the format hh:mm:ss ..
  * @apiParam           {Time}  end_time (required) End Time of the session in the format hh:mm:ss..
@@ -34,9 +35,9 @@
 
 /** @var Route $router */
 $router->post('sessions', [
-    'as' => 'api_session_create_session',
-    'uses'  => 'Controller@createSession',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_session_create_session',
+  'uses'  => 'Controller@createSession',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

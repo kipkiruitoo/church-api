@@ -2,7 +2,7 @@
 
 /**
  * @apiGroup           Session
- * @apiName            session/{id}/users
+ * @apiName            Get users in a session
  *
  * @api                {GET} /v1/session/:id/users Get users in a session.
  * @apiDescription     List of reistered users in a session

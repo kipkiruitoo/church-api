@@ -4,7 +4,7 @@
  * @apiGroup           Session
  * @apiName            addUserstoSession
  *
- * @api                {POST} /v1/session/add/users Add Users to Session title here..
+ * @api                {POST} /v1/session/add/users Add Users to Session
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

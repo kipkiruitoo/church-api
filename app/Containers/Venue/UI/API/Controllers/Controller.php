@@ -92,7 +92,7 @@ class Controller extends ApiController
     $seats = $venue->seats;
 
     return
-      response()->json(["status" => "Success", "message" => "Venue Updated Successfully", "data" => $seats])
+      response()->json(["status" => "Success", "message" => "Venue Seats retrieved Successfully", "data" => $seats])
       ->setStatusCode(200);
   }
 }

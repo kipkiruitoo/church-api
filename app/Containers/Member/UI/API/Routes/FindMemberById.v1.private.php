@@ -18,15 +18,16 @@
     "status": "Success",
     "message": "Member Retrieved Successfully",
     "data": {
-        "id": 2,
+        "id": 11,
         "name": "Davis Too",
         "gender": "Male",
+        "qr_string": "mzm-dxbqdrnb-2j3yuzhkgsx-1zsxao",
         "phone": 715686316,
         "church_id": 6,
         "location": "longisa",
         "yob": 1997,
-        "created_at": "2020-08-25T11:11:12.000000Z",
-        "updated_at": "2020-08-31T08:08:19.000000Z",
+        "created_at": "2020-09-01T08:27:49.000000Z",
+        "updated_at": "2020-09-01T08:27:49.000000Z",
         "deleted_at": null
     }
 }

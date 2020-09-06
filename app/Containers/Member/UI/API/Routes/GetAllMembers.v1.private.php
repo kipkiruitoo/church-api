@@ -21,99 +21,68 @@
         "current_page": 1,
         "data": [
             {
-                "id": 1,
-                "name": null,
-                "gender": "Male",
-                "phone": 715,
-                "church_id": 1,
-                "location": "kiambu",
-                "yob": 2020,
-                "created_at": "2020-08-25T11:11:12.000000Z",
-                "updated_at": "2020-08-25T11:11:13.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 2,
+                "id": 11,
                 "name": "Davis Too",
                 "gender": "Male",
+                "qr_string": "mzm-dxbqdrnb-2j3yuzhkgsx-1zsxao",
                 "phone": 715686316,
                 "church_id": 6,
                 "location": "longisa",
                 "yob": 1997,
-                "created_at": "2020-08-25T11:11:12.000000Z",
-                "updated_at": "2020-08-31T08:08:19.000000Z",
+                "created_at": "2020-09-01T08:27:49.000000Z",
+                "updated_at": "2020-09-01T08:27:49.000000Z",
                 "deleted_at": null
             },
             {
-                "id": 3,
-                "name": null,
-                "gender": null,
-                "phone": null,
-                "church_id": null,
-                "location": null,
-                "yob": null,
-                "created_at": "2020-08-31T07:51:30.000000Z",
-                "updated_at": "2020-08-31T07:51:30.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 4,
-                "name": null,
-                "gender": null,
-                "phone": null,
-                "church_id": null,
-                "location": null,
-                "yob": null,
-                "created_at": "2020-08-31T07:52:06.000000Z",
-                "updated_at": "2020-08-31T07:52:06.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 5,
-                "name": "davis_too",
-                "gender": "Male",
-                "phone": 715686316,
-                "church_id": 6,
-                "location": "longisa",
-                "yob": null,
-                "created_at": "2020-08-31T07:55:33.000000Z",
-                "updated_at": "2020-08-31T07:55:33.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 6,
+                "id": 12,
                 "name": "Davis Too",
                 "gender": "Male",
-                "phone": 715686316,
-                "church_id": 6,
-                "location": "longisa",
-                "yob": null,
-                "created_at": "2020-08-31T07:56:00.000000Z",
-                "updated_at": "2020-08-31T07:56:00.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 7,
-                "name": "Davis Too",
-                "gender": "Male",
-                "phone": 715686316,
-                "church_id": 6,
-                "location": "longisa",
-                "yob": null,
-                "created_at": "2020-08-31T07:56:21.000000Z",
-                "updated_at": "2020-08-31T07:56:21.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 8,
-                "name": "Davis Too",
-                "gender": "Male",
+                "qr_string": "u-exni6r-lkslp-hfarpdpjh-hayl-at-r5",
                 "phone": 715686316,
                 "church_id": 6,
                 "location": "longisa",
                 "yob": 1997,
-                "created_at": "2020-08-31T07:56:36.000000Z",
-                "updated_at": "2020-08-31T07:56:36.000000Z",
+                "created_at": "2020-09-01T08:27:53.000000Z",
+                "updated_at": "2020-09-01T08:27:53.000000Z",
+                "deleted_at": null
+            },
+            {
+                "id": 13,
+                "name": "Davis Too",
+                "gender": "Male",
+                "qr_string": "3mv-7usxofgkgbpibmo9yniupg8-m4ir",
+                "phone": 715686316,
+                "church_id": 6,
+                "location": "longisa",
+                "yob": 1997,
+                "created_at": "2020-09-01T08:27:54.000000Z",
+                "updated_at": "2020-09-01T08:27:54.000000Z",
+                "deleted_at": null
+            },
+            {
+                "id": 14,
+                "name": "Davis Too",
+                "gender": "Male",
+                "qr_string": "5lxrihseq7lkczhqcwi-at-33fnun",
+                "phone": 715686316,
+                "church_id": 6,
+                "location": "longisa",
+                "yob": 1997,
+                "created_at": "2020-09-01T08:27:57.000000Z",
+                "updated_at": "2020-09-01T08:27:57.000000Z",
+                "deleted_at": null
+            },
+            {
+                "id": 15,
+                "name": "Davis Too",
+                "gender": "Male",
+                "qr_string": "vn6aynupydiyyw60zlq788puk",
+                "phone": 715686316,
+                "church_id": 6,
+                "location": "longisa",
+                "yob": 1997,
+                "created_at": "2020-09-01T08:30:26.000000Z",
+                "updated_at": "2020-09-01T08:30:26.000000Z",
                 "deleted_at": null
             }
         ],
@@ -125,17 +94,17 @@
         "path": "http://dev.church/v1/members",
         "per_page": 15,
         "prev_page_url": null,
-        "to": 8,
-        "total": 8
+        "to": 5,
+        "total": 5
     }
 }
  */
 
 /** @var Route $router */
 $router->get('members', [
-    'as' => 'api_member_get_all_members',
-    'uses'  => 'Controller@getAllMembers',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_member_get_all_members',
+  'uses'  => 'Controller@getAllMembers',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

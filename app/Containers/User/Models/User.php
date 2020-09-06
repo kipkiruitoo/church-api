@@ -54,6 +54,7 @@ class User extends UserModel implements ChargeableInterface
     'social_avatar_original',
     'social_nickname',
     'confirmed',
+    'qr_string',
     'is_client',
   ];
 
@@ -92,8 +93,4 @@ class User extends UserModel implements ChargeableInterface
   /**
    * @return \Illuminate\Database\Eloquent\Relations\HasMany
    */
-  public function paymentAccounts()
-  {
-    return $this->hasMany(PaymentAccount::class);
-  }
 }

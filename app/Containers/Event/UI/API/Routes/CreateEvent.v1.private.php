@@ -17,7 +17,6 @@
  * @apiParam           {Int}  organization_id (optional)id of the organization..
  * @apiParam           {Int } user_id (optional) the person the event belongs to if the event is personal..
  * @apiParam           {Int } created_by (required)  the user creating the event..
-
  *
  *
  * @apiSuccessExample  {json}  Success-Response:

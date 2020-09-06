@@ -59,7 +59,7 @@ class CreateEventRequest extends Request
       'end_time' => 'required|max:255',
       'organization_id' => 'numeric|max:255',
       'user_id' => 'numeric|max:255',
-      'created_by' => 'numeric|max:255',
+      'created_by' => 'required|numeric|max:255',
     ];
   }
 

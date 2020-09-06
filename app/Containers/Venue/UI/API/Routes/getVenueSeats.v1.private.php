@@ -4,7 +4,7 @@
  * @apiGroup           Venue
  * @apiName            getSeats
  *
- * @api                {GET} /v1/venues/:id/seats Endpoint title here..
+ * @api                {GET} /v1/venues/:id/seats Get all venue seats ..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

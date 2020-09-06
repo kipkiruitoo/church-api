@@ -8,14 +8,12 @@ use Apiato\Core\Foundation\Facades\Apiato;
 
 class UpdateSeatsAction extends Action
 {
-    public function run(Request $request)
-    {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
+  public function run(Request $request)
+  {
+    $data = $request->all();
 
-        $seats = Apiato::call('Seats@UpdateSeatsTask', [$request->id, $data]);
+    $seats = Apiato::call('Seats@UpdateSeatsTask', [$request->id, $data]);
 
-        return $seats;
-    }
+    return $seats;
+  }
 }

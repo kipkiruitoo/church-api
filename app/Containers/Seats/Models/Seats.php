@@ -7,7 +7,7 @@ use App\Ship\Parents\Models\Model;
 class Seats extends Model
 {
     protected $fillable = [
-
+      'name', 'church_id', 'venue_id'
     ];
 
     protected $attributes = [

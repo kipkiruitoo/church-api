@@ -10,9 +10,7 @@ class CreateSeatsAction extends Action
 {
     public function run(Request $request)
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
+        $data = $request->all();
 
         $seats = Apiato::call('Seats@CreateSeatsTask', [$data]);
 

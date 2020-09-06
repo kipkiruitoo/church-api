@@ -18,58 +18,66 @@ use Apiato\Core\Foundation\Facades\Apiato;
  */
 class Controller extends ApiController
 {
-    /**
-     * @param CreateSeatsRequest $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function createSeats(CreateSeatsRequest $request)
-    {
-        $seats = Apiato::call('Seats@CreateSeatsAction', [$request]);
+  /**
+   * @param CreateSeatsRequest $request
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function createSeats(CreateSeatsRequest $request)
+  {
+    $seats = Apiato::call('Seats@CreateSeatsAction', [$request]);
 
-        return $this->created($this->transform($seats, SeatsTransformer::class));
-    }
+    return $this->created($seats);
+  }
 
-    /**
-     * @param FindSeatsByIdRequest $request
-     * @return array
-     */
-    public function findSeatsById(FindSeatsByIdRequest $request)
-    {
-        $seats = Apiato::call('Seats@FindSeatsByIdAction', [$request]);
+  /**
+   * @param FindSeatsByIdRequest $request
+   * @return array
+   */
+  public function findSeatsById(FindSeatsByIdRequest $request)
+  {
+    $seats = Apiato::call('Seats@FindSeatsByIdAction', [$request]);
 
-        return $this->transform($seats, SeatsTransformer::class);
-    }
+    return
+      response()->json(["status" => "Success", "message" => "Seat Retrieved Successfully", "data" => $seats])
+      ->setStatusCode(200);
+  }
 
-    /**
-     * @param GetAllSeatsRequest $request
-     * @return array
-     */
-    public function getAllSeats(GetAllSeatsRequest $request)
-    {
-        $seats = Apiato::call('Seats@GetAllSeatsAction', [$request]);
 
-        return $this->transform($seats, SeatsTransformer::class);
-    }
 
-    /**
-     * @param UpdateSeatsRequest $request
-     * @return array
-     */
-    public function updateSeats(UpdateSeatsRequest $request)
-    {
-        $seats = Apiato::call('Seats@UpdateSeatsAction', [$request]);
+  /**
+   * @param GetAllSeatsRequest $request
+   * @return array
+   */
+  public function getAllSeats(GetAllSeatsRequest $request)
+  {
+    $seats = Apiato::call('Seats@GetAllSeatsAction', [$request]);
 
-        return $this->transform($seats, SeatsTransformer::class);
-    }
+    return
+      response()->json(["status" => "Success", "message" => "seats Retrieved Successfully", "data" => $seats])
+      ->setStatusCode(200);
+  }
 
-    /**
-     * @param DeleteSeatsRequest $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function deleteSeats(DeleteSeatsRequest $request)
-    {
-        Apiato::call('Seats@DeleteSeatsAction', [$request]);
+  /**
+   * @param UpdateSeatsRequest $request
+   * @return array
+   */
+  public function updateSeats(UpdateSeatsRequest $request)
+  {
+    $seats = Apiato::call('Seats@UpdateSeatsAction', [$request]);
 
-        return $this->noContent();
-    }
+    return
+      response()->json(["status" => "Success", "message" => "Seat Updated Successfully", "data" => $seats])
+      ->setStatusCode(200);
+  }
+
+  /**
+   * @param DeleteSeatsRequest $request
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function deleteSeats(DeleteSeatsRequest $request)
+  {
+    Apiato::call('Seats@DeleteSeatsAction', [$request]);
+
+    return $this->noContent();
+  }
 }

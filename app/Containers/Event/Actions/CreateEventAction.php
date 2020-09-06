@@ -8,12 +8,13 @@ use Apiato\Core\Foundation\Facades\Apiato;
 
 class CreateEventAction extends Action
 {
-    public function run(Request $request)
-    {
-        $data = $request->all();
+  public function run(Request $request)
+  {
+    $data = $request->all();
 
-        $event = Apiato::call('Event@CreateEventTask', [$data]);
+    // var_dump($data);
+    $event = Apiato::call('Event@CreateEventTask', [$data]);
 
-        return $event;
-    }
+    return $event;
+  }
 }

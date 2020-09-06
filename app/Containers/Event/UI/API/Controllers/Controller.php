@@ -18,58 +18,64 @@ use Apiato\Core\Foundation\Facades\Apiato;
  */
 class Controller extends ApiController
 {
-    /**
-     * @param CreateEventRequest $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function createEvent(CreateEventRequest $request)
-    {
-        $event = Apiato::call('Event@CreateEventAction', [$request]);
+  /**
+   * @param CreateEventRequest $request
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function createEvent(CreateEventRequest $request)
+  {
+    $event = Apiato::call('Event@CreateEventAction', [$request]);
 
-        return $this->created($this->transform($event, EventTransformer::class));
-    }
+    return $this->created($event);
+  }
 
-    /**
-     * @param FindEventByIdRequest $request
-     * @return array
-     */
-    public function findEventById(FindEventByIdRequest $request)
-    {
-        $event = Apiato::call('Event@FindEventByIdAction', [$request]);
+  /**
+   * @param FindEventByIdRequest $request
+   * @return array
+   */
+  public function findEventById(FindEventByIdRequest $request)
+  {
+    $event = Apiato::call('Event@FindEventByIdAction', [$request]);
 
-        return $this->transform($event, EventTransformer::class);
-    }
+    return
+      response()->json(["status" => "Success", "message" => "Event Retrieved Successfully", "data" => $event])
+      ->setStatusCode(200);
+  }
 
-    /**
-     * @param GetAllEventsRequest $request
-     * @return array
-     */
-    public function getAllEvents(GetAllEventsRequest $request)
-    {
-        $events = Apiato::call('Event@GetAllEventsAction', [$request]);
+  /**
+   * @param GetAllEventsRequest $request
+   * @return array
+   */
+  public function getAllEvents(GetAllEventsRequest $request)
+  {
+    $events = Apiato::call('Event@GetAllEventsAction', [$request]);
 
-        return $this->transform($events, EventTransformer::class);
-    }
+    return
+      response()->json(["status" => "Success", "message" => "Events Retrieved Successfully", "data" => $events])
+      ->setStatusCode(200);
+  }
 
-    /**
-     * @param UpdateEventRequest $request
-     * @return array
-     */
-    public function updateEvent(UpdateEventRequest $request)
-    {
-        $event = Apiato::call('Event@UpdateEventAction', [$request]);
+  /**
+   * @param UpdateEventRequest $request
+   * @return array
+   */
+  public function updateEvent(UpdateEventRequest $request)
+  {
+    $event = Apiato::call('Event@UpdateEventAction', [$request]);
 
-        return $this->transform($event, EventTransformer::class);
-    }
+    return
+      response()->json(["status" => "Success", "message" => "Event Updated Successfully", "data" => $event])
+      ->setStatusCode(200);
+  }
 
-    /**
-     * @param DeleteEventRequest $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function deleteEvent(DeleteEventRequest $request)
-    {
-        Apiato::call('Event@DeleteEventAction', [$request]);
+  /**
+   * @param DeleteEventRequest $request
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function deleteEvent(DeleteEventRequest $request)
+  {
+    Apiato::call('Event@DeleteEventAction', [$request]);
 
-        return $this->noContent();
-    }
+    return $this->noContent();
+  }
 }

@@ -4,7 +4,7 @@
  * @apiGroup           Seats
  * @apiName            deleteSeats
  *
- * @api                {DELETE} /v1/seats/:id Delete an Event..
+ * @api                {DELETE} /v1/seats/:id Delete a Seat..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
@@ -21,9 +21,9 @@
 
 /** @var Route $router */
 $router->delete('seats/{id}', [
-    'as' => 'api_seats_delete_seats',
-    'uses'  => 'Controller@deleteSeats',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_seats_delete_seats',
+  'uses'  => 'Controller@deleteSeats',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

@@ -14,16 +14,14 @@
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
-{
-  // Insert the response of the request here...
-}
+
  */
 
 /** @var Route $router */
 $router->delete('events/{id}', [
-    'as' => 'api_event_delete_event',
-    'uses'  => 'Controller@deleteEvent',
-    'middleware' => [
-      'auth:api',
-    ],
+  'as' => 'api_event_delete_event',
+  'uses'  => 'Controller@deleteEvent',
+  'middleware' => [
+    'auth:api',
+  ],
 ]);

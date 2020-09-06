@@ -10,20 +10,20 @@ use Exception;
 class CreateEventTask extends Task
 {
 
-    protected $repository;
+  protected $repository;
 
-    public function __construct(EventRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+  public function __construct(EventRepository $repository)
+  {
+    $this->repository = $repository;
+  }
 
-    public function run(array $data)
-    {
-        try {
-            return $this->repository->create($data);
-        }
-        catch (Exception $exception) {
-            throw new CreateResourceFailedException();
-        }
-    }
+  public function run(array $data)
+  {
+    // try {
+    return $this->repository->create($data);
+    // }
+    // catch (Exception $exception) {/
+    // throw new CreateResourceFailedException();
+    // }
+  }
 }

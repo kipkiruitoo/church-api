@@ -21,6 +21,10 @@ class Event extends Model
     'updated_at',
   ];
 
+  public function sessions()
+  {
+    return $this->hasMany('App\Containers\Session\Models\Session');
+  }
   /**
    * A resource key to be used by the the JSON API Serializer responses.
    */

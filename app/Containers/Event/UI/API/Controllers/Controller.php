@@ -3,6 +3,8 @@
 namespace App\Containers\Event\UI\API\Controllers;
 
 use App\Containers\Event\UI\API\Requests\CreateEventRequest;
+
+use App\Containers\Event\Models\Event;
 use App\Containers\Event\UI\API\Requests\DeleteEventRequest;
 use App\Containers\Event\UI\API\Requests\GetAllEventsRequest;
 use App\Containers\Event\UI\API\Requests\FindEventByIdRequest;
@@ -77,5 +79,16 @@ class Controller extends ApiController
     Apiato::call('Event@DeleteEventAction', [$request]);
 
     return $this->noContent();
+  }
+
+  public function getsessions($id)
+  {
+
+    $event = Event::find($id);
+    $sessions = $event->sessions;
+
+    return
+      response()->json(["status" => "Success", "message" => "Event Sessions retrieved successfully", "data" => $sessions])
+      ->setStatusCode(200);
   }
 }

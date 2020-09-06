@@ -26,6 +26,10 @@ class Session extends Model
     return $this->belongsTo('App\Containers\Church\Models\Church');
   }
 
+  public function event()
+  {
+    return $this->belongsTo('App\Containers\Event\Models\Event');
+  }
   public function members()
   {
     return $this->belongsToMany('App\Containers\Member\Models\Member', 'member_session', 'session_id', 'member_id')

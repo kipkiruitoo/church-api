@@ -18,8 +18,7 @@ class CreateSeatsTables extends Migration
       $table->bigInteger('church_id');
       $table->bigInteger('venue_id');
       $table->timestamps();
-      //$table->softDeletes();
-
+      $table->softDeletes();
     });
   }
 

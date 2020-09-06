@@ -4,7 +4,7 @@
  * @apiGroup           Seats
  * @apiName            deleteSeats
  *
- * @api                {DELETE} /v1/seats/:id Endpoint title here..
+ * @api                {DELETE} /v1/seats/:id Delete an Event..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

@@ -4,7 +4,7 @@
  * @apiGroup           Seats
  * @apiName            findSeatsById
  *
- * @api                {GET} /v1/seats/:id Endpoint title here..
+ * @api                {GET} /v1/seats/:id Find Seat by ID..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0

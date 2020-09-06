@@ -105,7 +105,10 @@ class Controller extends ApiController
 
 
 
+
     $current_capacity = DB::table('member_session')
+      ->where('session_id', $session_id)
+      ->count() + DB::table('user_session')
       ->where('session_id', $session_id)
       ->count();
 
@@ -148,18 +151,29 @@ class Controller extends ApiController
 
 
     // var_dump($seats);
+    $taken =   DB::table('user_session')->where('session_id', $session_id)->get()->pluck('seat_id');
 
     $taken_seats =
       DB::table('member_session')->where('session_id', $session_id)->get()->pluck('seat_id');
 
 
 
+
+
     $taken_seats = join(",", $taken_seats->toArray());
 
 
+    $taken  =
+      join(",", $taken->toArray());
+
+
+    $taken = explode(",", $taken);
+
     $taken_seats = explode(",", $taken_seats);
 
-    // var_dump($taken_seats);
+
+
+    $taken_seats = array_merge($taken_seats, $taken);
 
     $remaining_seats = array_diff($seats, $taken_seats);
 
@@ -177,6 +191,114 @@ class Controller extends ApiController
     return $this->json([
       'status' => 'success',
       'message' => 'Member Successfully Added to the church session',
+      'data' => [
+        "seat_id" => $seat
+      ]
+    ]);
+  }
+
+  public function addUserstoSession(Request $request)
+  {
+    $church_id = $request->church_id;
+    $member_id = $request->user_id;
+    $temperature = $request->temperature;
+    $session_id = $request->session_id;
+
+    $session = Session::find($session_id);
+
+    // get the associated venue
+    $venue = $session->venue;
+    // get capacity of that venue
+    $capacity = $venue->capacity;
+
+
+
+    $current_capacity = DB::table('member_session')
+      ->where('session_id', $session_id)
+      ->count() + DB::table('user_session')
+      ->where('session_id', $session_id)
+      ->count();
+
+
+    if (is_null($session)) {
+      return $this->json([
+        'status' => 'failed',
+        'message' => 'church session not found'
+      ])->setStatusCode(404);
+    }
+
+
+    $exists = DB::table('user_session')
+      ->where('user_id', $member_id)
+      ->where('session_id', $session_id)
+      ->count() > 0;
+
+    if ($exists) {
+      return $this->json([
+        'status' => 'failed',
+        'message' => 'User Already added to this session'
+      ]);
+    }
+
+    // check if capacity is full
+
+    if ($current_capacity >= $capacity) {
+      return $this->json([
+        'status' => 'failed',
+        'message' => 'Venue is  already full'
+      ]);
+    }
+
+    // get a seat number for new member
+
+    $seats = $venue->seats->pluck('id');
+    $seats = join(",", $seats->toArray());
+
+    $seats = explode(",", $seats);
+
+
+    // var_dump($seats);
+    $taken =   DB::table('user_session')->where('session_id', $session_id)->get()->pluck('seat_id');
+
+    $taken_seats =
+      DB::table('member_session')->where('session_id', $session_id)->get()->pluck('seat_id');
+
+
+
+
+
+    $taken_seats = join(",", $taken_seats->toArray());
+
+
+    $taken  =
+      join(",", $taken->toArray());
+
+
+    $taken = explode(",", $taken);
+
+    $taken_seats = explode(",", $taken_seats);
+
+
+
+    $taken_seats = array_merge($taken_seats, $taken);
+    // var_dump($taken_seats);
+
+    $remaining_seats = array_diff($seats, $taken_seats);
+
+
+    $seat = Arr::random($remaining_seats);
+
+    // print_r($seat);
+
+    $session->members()->attach($session_id, [
+      'member_id' =>  $member_id,
+      'temperature' => $temperature,
+      'seat_id' => $seat
+    ]);
+
+    return $this->json([
+      'status' => 'success',
+      'message' => 'User Successfully Added to the church session',
       'data' => [
         "seat_id" => $seat
       ]

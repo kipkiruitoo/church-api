@@ -43,6 +43,13 @@ class Session extends Model
       ->withTimestamps();
   }
 
+  public function users()
+  {
+    return $this->belongsToMany('App\Containers\User\Models\User', 'user_session', 'session_id', 'user_id')
+      ->withPivot('temperature', 'temperature')
+      ->withTimestamps();
+  }
+
   /**
    * A resource key to be used by the the JSON API Serializer responses.
    */

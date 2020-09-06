@@ -2,18 +2,19 @@
 
 /**
  * @apiGroup           Member
- * @apiName
+ * @apiName            searchMemberByQrcode
  *
- * @api                {GET} /v1/members?search=qr_string:qrcode here..  Get Member by QR Code
- * @apiDescription     Search for a member using a qr code
+ * @api                {GET} /v1/members?search=qr_string:qrcode  SearchMember here..
+ * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
- * @apiPermission      Authenticated User
+ * @apiPermission      none
  *
+ * @apiParam           {String}  parameters here..
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
-  {
+{
     "status": "Success",
     "message": "Members Retrieved Successfully",
     "data": {
@@ -44,13 +45,13 @@
         "to": 1,
         "total": 1
     }
-  }
+}
  */
 
 /** @var Route $router */
-$router->get('members/jhbkbkkbkdbkfbkbfkkbfkbdkbfkfbjksearch=qr_string:{qrcode}', [
-  'as' => 'api_member_searchmember',
-  'uses'  => 'Controller@searchmember',
+$router->get('members?search=qr_string:{qrcode}', [
+  'as' => 'api_member_',
+  'uses'  => 'Controller@',
   'middleware' => [
     'auth:api',
   ],

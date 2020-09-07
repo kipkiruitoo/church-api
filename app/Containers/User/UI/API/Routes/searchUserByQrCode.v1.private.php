@@ -4,7 +4,7 @@
  * @apiGroup           User
  * @apiName            SearchUseryQrCode
  *
- * @api                {GET} /v1/clients?search=qr_string:{qr_string} Search User by qr code ...
+ * @api                {GET} /v1/clients?search=qr_string:qr_string} Search User by qr code ...
  * @apiDescription     search for a user using qr string..
  *
  * @apiVersion         1.0.0
@@ -54,3 +54,7 @@
     }
 }
  */
+$router->any('password/reset', [
+  'as' => 'api_user_reset_password',
+  'uses'  => 'Controller@resetPassword',
+]);

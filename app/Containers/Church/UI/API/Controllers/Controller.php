@@ -39,7 +39,7 @@ class Controller extends ApiController
         response()->json(["status" => "Success", "message" => "Organization Created Successfully", "data" => $church->toArray()])
         ->setStatusCode(201);
     } else {
-      return ["message" => "An Error Occurred"]->response()->setStatusCode(422);
+      return response()->json(["message" => "An Error Occurred"])->setStatusCode(422);
     }
   }
 

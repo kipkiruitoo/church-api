@@ -82,7 +82,9 @@ class Controller extends ApiController
   {
     $users = Apiato::call('User@GetAllUsersAction');
 
-    return $this->transform($users, UserTransformer::class);
+    return
+      response()->json(["status" => "Success", "message" => "Users Retrieved Successfully", "data" => $users])
+      ->setStatusCode(200);
   }
 
   /**
@@ -94,7 +96,9 @@ class Controller extends ApiController
   {
     $users = Apiato::call('User@GetAllClientsAction');
 
-    return $this->transform($users, UserTransformer::class);
+    return
+      response()->json(["status" => "Success", "message" => "Clients Retrieved Successfully", "data" => $users])
+      ->setStatusCode(200);
   }
 
   /**
@@ -106,7 +110,9 @@ class Controller extends ApiController
   {
     $users = Apiato::call('User@GetAllAdminsAction');
 
-    return $this->transform($users, UserTransformer::class);
+    return
+      response()->json(["status" => "Success", "message" => "Admin Users Retrieved Successfully", "data" => $users])
+      ->setStatusCode(200);
   }
 
   /**
@@ -118,7 +124,9 @@ class Controller extends ApiController
   {
     $user = Apiato::call('User@FindUserByIdAction', [new DataTransporter($request)]);
 
-    return $this->transform($user, UserTransformer::class);
+    return
+      response()->json(["status" => "Success", "message" => "User Retrieved Successfully", "data" => $user])
+      ->setStatusCode(200);
   }
 
   /**
@@ -130,7 +138,9 @@ class Controller extends ApiController
   {
     $user = Apiato::call('User@GetAuthenticatedUserAction');
 
-    return $this->transform($user, UserPrivateProfileTransformer::class);
+    return
+      response()->json(["status" => "Success", "message" => "User Details Retrieved Successfully", "data" => $church])
+      ->setStatusCode(200);
   }
 
   /**

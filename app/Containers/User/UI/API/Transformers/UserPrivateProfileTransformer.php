@@ -37,10 +37,11 @@ class UserPrivateProfileTransformer extends Transformer
     {
         $response = [
             'object'               => 'User',
-            'id'                   => $user->getHashedKey(),
+            'id'                   => $user->id,
             'name'                 => $user->name,
             'email'                => $user->email,
             'confirmed'            => $user->confirmed,
+            'qr_string'             => $user->qr_string,
             'nickname'             => $user->nickname,
             'gender'               => $user->gender,
             'birth'                => $user->birth,

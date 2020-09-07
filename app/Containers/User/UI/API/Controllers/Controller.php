@@ -139,7 +139,7 @@ class Controller extends ApiController
     $user = Apiato::call('User@GetAuthenticatedUserAction');
 
     return
-      response()->json(["status" => "Success", "message" => "User Details Retrieved Successfully", "data" => $church])
+      response()->json(["status" => "Success", "message" => "User Details Retrieved Successfully", "data" => $user])
       ->setStatusCode(200);
   }
 
